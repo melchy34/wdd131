@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="wdd 131 - Dynamic Web Fundamentals. Chukwugoziri Melchiades. Learn about web development with HTML, CSS, and JavaScript.">
+    <meta name="author" content="Chukwugoziri Melchiades">
+    <link rel="stylesheet" href="styles/base.css">
+    <title>wdd 131 - Dynamic Web Fundamentals - Chukwugoziri Melchiades</title>
+</head>
+
+<body>
+    <header>
+        <h1>Welcome to wdd 131 - Dynamic Web Fundamentals</h1>
+        <nav>
+            <ul>
+                <li><a href="https://www.linkedin.com/in/melchiades-uzukwu" target="_blank">LinkedIn</a></li>
+                <li><a href="https://byupw.instructure.com/" target="_blank">Canvas</a></li>
+                <li><a href="https://www.churchofjesuschrist.org/study/scriptures" target="_blank">Favorite Scripture</a></li>
+                <li><a href="#final-project">Final Project</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="card">
+            <h2>Introduction to Web Development</h2>
+            <div class="image-text-container">
+                <img src="images/profile.JPG" alt="Web Development Introduction" width="100" height="100">
+                <p>Web development refers to the process of creating and maintaining websites. It involves a combination of activities, including web design, coding, content creation, and server-side configuration. Web development can range from building a simple static webpage to creating complex dynamic applications. The field has evolved over the years with new technologies and frameworks emerging, making it an exciting and ever-changing domain.</p>
+            </div>
+            <h3>Advanced Web Techniques</h3>
+            <div class="image-text-container">
+                <img src="images/webdev_advanced.JPG" alt="Advanced Web Development" width="100" height="100">
+                <p>As the field of web development continues to evolve, developers have access to more advanced techniques and tools that allow for the creation of dynamic, interactive, and high-performance websites and applications. These advanced techniques often focus on optimizing user experience, improving website functionality, and ensuring scalability and security. Below, we explore some of the key advanced web development techniques that are becoming essential for modern web applications.</p>
+            </div>
+        </section>
+
+        <section class="card">
+            <h4>Web Dev Resources</h4>
+            <ul>
+                <li><a href="https://css-tricks.com/" target="_blank">CSS Tricks</a></li>
+                <li><a href="https://dev.to/" target="_blank">Dev.to Community</a></li>
+                <li><a href="https://www.w3schools.com/" target="_blank">W3 Schools</a></li>
+                <li><a href="https://www.udemy.com/" target="_blank">Udemy</a></li>
+                <li><a href="https://via.placeholder.com/150" target="_blank">Image Placeholder</a></li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>
+            &copy; <span id="currentyear"></span> Chukwugoziri Melchiadees, Lagos, Nigeria
+        </p>
+        <p id="lastModified"></p>
+    </footer>
+
+    <script>
+        document.getElementById('currentyear').textContent = new Date().getFullYear();
+        document.getElementById('lastModified').textContent = "Last modified: " + document.lastModified;
+    </script>
+</body>
+
+</html>

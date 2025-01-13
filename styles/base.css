@@ -1,0 +1,94 @@
+/* Base styles */
+body {
+  font-family: 'Roboto', sans-serif; /* Example Google Font */
+  margin: 0;
+  line-height: 1.5;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+header {
+  background-color: #3f17ad;
+  color: #fff;
+  padding: 0; /* Added padding for spacing */
+  text-align: center;
+}
+
+nav ul {
+  display: flex;
+  justify-content: space-around;
+  background-color: black;
+  list-style: none;
+  padding: 10px 0; /* Added padding for spacing */
+}
+
+nav ul li {
+  margin: 0 10px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+nav ul li a:hover {
+  text-decoration: underline; /* Corrected hover style */
+  color: blue; /* Added color change to match the hover effect */
+  border: 1px solid #fff;
+}
+
+h2 {
+  background-color: #49178a;
+  color: #f3ebeb;
+  text-align: center;
+  border: 2px solid #49178a; /* Added border style for clarity */
+  padding: 10px 0; /* Added padding */
+}
+
+h3 {
+  text-align: center;
+  border-bottom: 2px solid #49178a; /* Adjusted border for h3 */
+}
+
+h4 {
+  background-color: #49178a;
+  color: #fff;
+  text-align: center;
+  border: 2px solid #49178a; /* Added border style for consistency */
+  padding: 10px 0; /* Added padding */
+}
+
+main {
+  margin: 40px auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  height: auto;
+}
+
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.card {
+  background-color: #f4f4f4;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card:hover {
+  background-color: #e0e0e0;
+}
+
+footer {
+  background-color: #49178a;
+  color: #fff;
+  text-align: center;
+  padding: 20px 0; /* Added padding for spacing */
+}
