@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Temple Album</title>
+  <!-- Mobile-first CSS for smaller screens -->
+  <link rel="stylesheet" href="styles/temples.css">
+  <!-- Larger screen-specific CSS -->
+  <link rel="stylesheet" href="styles/temples-large.css">
+  <!-- External Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <!-- Deferred JavaScript file -->
+  <script src="scripts/temples.js" defer></script>
+</head>
+
+<body>
+  <!-- Header section -->
+  <header>
+    <h1>Temple Album</h1>
+    <nav>
+      <!-- Hamburger menu for mobile -->
+      <button class="hamburger" id="hamburger">&#9776;</button>
+      <ul class="menu" id="navMenu">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#old">Old</a></li>
+        <li><a href="#new">New</a></li>
+        <li><a href="#large">Large</a></li>
+        <li><a href="#small">Small</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Main content -->
+  <main>
+    <h2>Home</h2> <!-- This will change based on the current menu selection -->
+    <div class="container">
+      <!-- Placeholder figures for temples -->
+      <figure>
+        <img src="images/temple1.JPG" alt="Temple 1">
+        <figcaption>Aba Nigeria Temple</figcaption>
+      </figure>
+      <figure>
+        <img src="images/temple2.JPG" alt="Temple 2">
+        <figcaption>Accra Ghana Temple</figcaption>
+      </figure>
+      <figure>
+        <img src="images/temple3.JPG" alt="Temple 3">
+        <figcaption>Alabang Philippines Temple</figcaption>
+      </figure>
+      <figure>
+        <img src="images/temple4.JPG" alt="Temple 4">
+        <figcaption>Bakerfield California Temple</figcaption>
+      </figure>
+      <figure>
+        <img src="images/temple5.JPG" alt="Temple 5">
+        <figcaption>Columbus Ohio Temple</figcaption>
+      </figure>
+      <figure>
+        <img src="images/temple6.JPG" alt="Temple 6">
+        <figcaption>Gilbert Arizona Temple</figcaption>
+      </figure>
+      <figure>
+        <img src="images/temple7.JPG" alt="Temple 7">
+        <figcaption>Madrid Spain Temple</figcaption>
+      </figure>
+      <figure>
+        <img src="images/temple8.JPG" alt="Temple 8">
+        <figcaption>Mexico City Mexico Temple</figcaption>
+      </figure>
+      <figure>
+        <img src="images/temple9.JPG" alt="Temple 9">
+        <figcaption>Preston England Temple</figcaption>
+      </figure>
+    </div>
+  </main>
+
+  <!-- Footer section -->
+  <footer>
+    <p>&copy; <span id="year"></span> Chukwugoziri Melchiadees, Lagos, Nigeria.</p>
+    <p>Last modified: <span id="lastModified"></span></p>
+  </footer>
+
+  <!-- JavaScript to support footer year and last modified date -->
+  <script>
+    // Set the current year in the footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Set the last modified date in the footer
+    document.getElementById('lastModified').textContent = document.lastModified;
+
+    // Hamburger menu functionality for mobile view
+    document.getElementById('hamburger').addEventListener('click', function() {
+      const navMenu = document.getElementById('navMenu');
+      navMenu.classList.toggle('show');
+      this.textContent = navMenu.classList.contains('show') ? 'X' : '☰';
+    });
+  </script>
+</body>
+</html>
