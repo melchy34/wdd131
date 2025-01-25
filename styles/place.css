@@ -1,0 +1,60 @@
+/* Global Variables */
+:root {
+    --primary-color: #ff7f50;  /* Coral color (similar to Madagascar's flag) */
+    --secondary-color: #4b0082; /* Indigo */
+    --background-color: #f4f4f4;
+    --font-family: Arial, sans-serif;
+  }
+  
+  /* General Styles */
+  body {
+    font-family: var(--font-family);
+    background-color: var(--background-color);
+    margin: 0;
+    padding: 0;
+  }
+  
+  header {
+    text-align: center;
+  }
+  
+  #weather {
+    padding: 20px;
+    background-color: var(--primary-color);
+    color: white;
+    margin-top: 20px;
+  }
+  
+  h2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  h2::after {
+    content: "☀️"; /* Weather icon for large view */
+    margin-left: 10px;
+  }
+  
+  footer {
+    text-align: center;
+    padding: 10px;
+    background-color: var(--secondary-color);
+    color: white;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }
+  
+  @media (max-width: 500px) {
+    #weather {
+      background-color: #32cd32; /* A different color for mobile view */
+    }
+  }
+  
+  @media (max-width: 1000px) {
+    #weather {
+      background-color: #ff6347; /* A different color for medium-sized screens */
+    }
+  }
+  

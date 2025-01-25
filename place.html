@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather and Hero Page</title>
+  <link rel="stylesheet" href="styles/place.css"> <!-- Link to external CSS file -->
+  <script src="scripts/place.js" defer></script> <!-- Link to external JS file with defer attribute -->
+</head>
+<body>
+  <!-- Hero Section with srcset for responsive images -->
+  <header>
+    <picture>
+      <source srcset="images/hero-small.webp" media="(max-width: 500px)">
+      <source srcset="images/hero-medium.webp" media="(max-width: 1000px)">
+      <img srcset="images/hero.webp" alt="Hero Image" width="10%" height="auto">
+    </picture>
+  </header>
+
+  <!-- Weather Section -->
+  <section id="weather">
+    <h2>Weather ⛅</h2>
+    <p id="temperature">Temperature: 25°C</p>
+    <p id="wind-speed">Wind Speed: 15 km/h</p>
+    <p id="windchill">Windchill: Calculating...</p>
+  </section>
+
+  <!-- Footer Section -->
+  <footer>
+    <p>&copy; <span id="current-year"></span> - Chukwugoziri Melchiadees, Lagos, Nigeria - <span id="last-modified"></span></p>
+  </footer>
+</body>
+</html>
