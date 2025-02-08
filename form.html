@@ -2,9 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product Review Form</title>
     <link rel="stylesheet" href="styles/form.css">
+    <meta name="description" content="Share your feedback on our latest electronics product. Rate it, highlight useful features, and provide your written review to help others!">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <title>Product Review Form</title>
     <script src="scripts/form.js" defer></script>
     <style>
         /* Base Reset */
@@ -194,37 +195,6 @@
         <input type="text" id="userName" name="userName" placeholder="Enter your name (optional)">
 
         <!-- Submit Button -->
-        <input type="submit" value="Post Review">
+        <input type="submit" value="Submit">
     </form>
 </section>
-
-<footer>
-    &copy; <span id="currentYear"></span> Chukwugoziri Melchiadees, Lagos, Nigeria
-</p>| Last modified: <span id="lastModifiedDate"></span>
-</footer>
-
-<script>
-    // Array of product objects
-    const products = [
-        { id: '1', name: 'Product A' },
-        { id: '2', name: 'Product B' },
-        { id: '3', name: 'Product C' },
-        { id: '4', name: 'Product D' }
-    ];
-
-    // Populate the product select dropdown
-    const productSelect = document.getElementById('productName');
-    products.forEach(product => {
-        const option = document.createElement('option');
-        option.value = product.id; // Use product id as value
-        option.textContent = product.name; // Use product name as display text
-        productSelect.appendChild(option);
-    });
-
-    // Set current year and last modified date in the footer
-    document.getElementById('currentYear').textContent = new Date().getFullYear();
-    document.getElementById('lastModifiedDate').textContent = document.lastModified;
-</script>
-
-</body>
-</html>
