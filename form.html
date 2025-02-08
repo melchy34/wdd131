@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Review Form</title>
+    <style>
+        /* Base Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', sans-serif;
+            background-color: #f7f9fc;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #3a86ff;
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+            font-size: 1.5em;
+        }
+
+        section {
+            max-width: 700px;
+            margin: 40px auto;
+            padding: 25px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(61, 15, 228, 0.1);
+        }
+
+        h1 {
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        label {
+            font-size: 1.1em;
+            font-weight: 600;
+            color: #555;
+            margin-bottom: 8px;
+            display: inline-block;
+        }
+
+        select, input, textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            margin: 8px 0 20px;
+            font-size: 1em;
+            transition: border-color 0.3s;
+        }
+
+        select:focus, input:focus, textarea:focus {
+            border-color: #3a86ff;
+        }
+
+        .rating {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .rating input {
+            display: none;
+        }
+
+        .rating label {
+            font-size: 2em;
+            color: #ccc;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .rating input:checked ~ label {
+            color: gold;
+        }
+
+        .checkbox-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .checkbox-group input[type="checkbox"] {
+            width: auto;
+            margin-right: 10px;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        /* Button Styling */
+        input[type="submit"] {
+            width: 100%;
+            padding: 12px;
+            background-color: #3a86ff;
+            color: white;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #2d5dbb;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            section {
+                padding: 20px;
+                margin: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Product Review Form</h1>
+</header>
+
+<section>
+    <form action="review.html" method="get">
+        <!-- Product Name -->
+        <label for="productName">Product Name</label>
+        <select id="productName" name="productName" required>
+            <option value="" disabled selected>Select a Product ...</option>
+            <!-- Product options will be dynamically inserted here -->
+        </select>
+
+        <!-- Overall Rating -->
+        <label>Overall Rating</label>
+        <div class="rating">
+            <input type="radio" id="rating1" name="rating" value="1" required>
+            <label for="rating1">&#9734;</label>
+            <input type="radio" id="rating2" name="rating" value="2" required>
+            <label for="rating2">&#9734;</label>
+            <input type="radio" id="rating3" name="rating" value="3" required>
+            <label for="rating3">&#9734;</label>
+            <input type="radio" id="rating4" name="rating" value="4" required>
+            <label for="rating4">&#9734;</label>
+            <input type="radio" id="rating5" name="rating" value="5" required>
+            <label for="rating5">&#9734;</label>
+        </div>
+
+        <!-- Date of Installation -->
+        <label for="installationDate">Date of Installation</label>
+        <input type="date" id="installationDate" name="installationDate" required>
+
+        <!-- Useful Features -->
+        <label>Useful Features</label>
+        <div class="checkbox-group">
+            <div>
+                <input type="checkbox" id="feature1" name="usefulFeatures" value="Feature 1">
+                <label for="feature1">Feature 1</label>
+            </div>
+            <div>
+                <input type="checkbox" id="feature2" name="usefulFeatures" value="Feature 2">
+                <label for="feature2">Feature 2</label>
+            </div>
+            <div>
+                <input type="checkbox" id="feature3" name="usefulFeatures" value="Feature 3">
+                <label for="feature3">Feature 3</label>
+            </div>
+        </div>
+
+        <!-- Written Review -->
+        <label for="writtenReview">Written Review (Optional)</label>
+        <textarea id="writtenReview" name="writtenReview" rows="4" placeholder="Write your review here..."></textarea>
+
+        <!-- User Name -->
+        <label for="userName">Your Name (Optional)</label>
+        <input type="text" id="userName" name="userName" placeholder="Enter your name (optional)">
+
+        <!-- Submit Button -->
+        <input type="submit" value="Post Review">
+    </form>
+</section>
+
+<footer>
+    &copy; <span id="currentYear"></span> Chukwugoziri Melchiadees, Lagos, Nigeria
+</p>| Last modified: <span id="lastModifiedDate"></span>
+</footer>
+
+<script>
+    // Array of product objects
+    const products = [
+        { id: '1', name: 'Product A' },
+        { id: '2', name: 'Product B' },
+        { id: '3', name: 'Product C' },
+        { id: '4', name: 'Product D' }
+    ];
+
+    // Populate the product select dropdown
+    const productSelect = document.getElementById('productName');
+    products.forEach(product => {
+        const option = document.createElement('option');
+        option.value = product.id; // Use product id as value
+        option.textContent = product.name; // Use product name as display text
+        productSelect.appendChild(option);
+    });
+
+    // Set current year and last modified date in the footer
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
+    document.getElementById('lastModifiedDate').textContent = document.lastModified;
+</script>
+
+</body>
+</html>
